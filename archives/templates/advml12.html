@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>AdvML | Kizzen</title>  
+
+
+<html lang="en">
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Example of Bootstrap 3 Stateful Buttons</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">  
+$(function() { 
+    $(".btn").click(function(){
+        $(this).button('loading').delay(1000).queue(function() {
+            $(this).button('reset');
+            $(this).dequeue();
+        });        
+    });
+});   
+</script>
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">  
+$(function() { 
+    $(".btn").click(function(){
+        $(this).button('loading').delay(1000).queue(function() {
+            $(this).button('reset');
+            $(this).dequeue();
+        });        
+    });
+});   
+</script>
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
+
+    <link rel="stylesheet" type="text/css" href="https://loading.io/css/loading-btn.css"/>
+<link rel="stylesheet" type="text/css"
+href="https://loading.io/css/loading.css"/>  
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="./static/style/loading.css"/>
+	<link rel="stylesheet" type="text/css" href="./static/style/loading-btn.css"/>
+
+<!--     <link rel="stylesheet" type="text/css" media="all" href="./static/style/tone.css" />
+    <script src="./static/js/jave.js"></script> -->
+    <link rel="canonical" href="."/>
+</head>
+
+  <body>
+  <center>   <br><br>
+  <h1 font size="16">Explore Adversarial Attacks</font></h1><br>
+
+      <form  action="/advml" method="POST" >
+      <label for="dataset">Select Dataset:</label>
+     <select name="dataset" style="width: 60px">
+       <option value="null"> </option>
+       <option value="MNIST">MNIST</option>
+       <option value="CIFAR">CIFAR</option>
+     </select>
+
+      <label for="model">&nbsp; &nbsp; &nbsp; Select Model:</label>
+     <select name="model" style="width: 60px">
+       <option value="null"> </option>
+       <option value="Undistilled CNN">Undistilled CNN</option>
+       <option value="Distilled CNN">Distilled CNN</option>
+     </select>
+
+     <label for="attack">&nbsp; &nbsp; &nbsp; Select Attack:</label>
+     <select name="attack" style="width: 60px">
+       <option value="null"> </option>
+       <option value="fgsm">FGSM</option>
+       <option value="cw">CW</option>
+     </select> &nbsp &nbsp &nbsp
+   <div>
+     <br><br>
+
+<!--      <div class="btn btn-default ld-ext-right running">
+  My Button
+  <div class="ld ld-ring ld-spin"></div>
+</div> -->
+<!-- 
+<button type="button" class="twoToneButton" data-loading-text="Loading...">Loading state</button> -->
+
+
+     <!-- <button class="btn btn-primary"  name="vizbtn" type="submit" style="color:red" data-loading-text="Loading..." onclick="this.classList.add('running')" >Attack!</button> -->
+
+
+         <button type="submit" class="btn btn-danger" data-loading-text="Loading...">Attack!</button>
+
+
+   </div>
+   </form>
+
+   <div>
+   <center>
+<!--       <img src="./static/original.png" width="500" height="333"/>
+      <img src="./static/adversarial.png" width="500" height="333"/> -->
+   </center>
+   </center>
+</div>
+
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+</center>
+</body>
+</html>

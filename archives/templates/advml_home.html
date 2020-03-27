@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+   <head>
+  <center>   
+  <h1 font size="16">Explore Adversarial Attacks</font></h1><br>
+
+      <form class="inline-form" action="/advml" method="POST" >
+      <label for="dataset">Select Dataset:</label>
+     <select name="dataset" style="width: 60px">
+       <option value="null"> </option>
+       <option value="MNIST">MNIST</option>
+       <option value="CIFAR">CIFAR</option>
+     </select>
+
+      <label for="model">&nbsp; &nbsp; &nbsp; Select Model:</label>
+     <select name="model" style="width: 60px">
+       <option value="null"> </option>
+       <option value="Undistilled CNN">Undistilled CNN</option>
+       <option value="Distilled CNN">Distilled CNN</option>
+     </select>
+
+     <label for="attack">&nbsp; &nbsp; &nbsp; Select Attack:</label>
+     <select name="attack" style="width: 60px">
+       <option value="null"> </option>
+       <option value="fgsm">FGSM</option>
+       <option value="cw">CW</option>
+     </select> &nbsp &nbsp &nbsp
+   <div>
+     <br><br>
+     <button name="vizbtn" type="submit" style="color:red">Attack!</button>
+   </div>
+   </form>
+
+   <div>
+   <center>
+      <img src="./static/original.png" width="500" height="333"/>
+      <img src="./static/adversarial.png" width="500" height="333"/>
+   </center>
+   </center>
+</div>
+
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
