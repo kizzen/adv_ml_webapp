@@ -11,6 +11,7 @@ import tensorflow as tf
 import keras
 from keras.datasets import mnist
 from keras.models import model_from_json
+import os
 
 # hyperparam tuning
 img_rows, img_cols = 28, 28 # image dimensions
@@ -86,7 +87,7 @@ def store_images_fgsm(num):
 	fig.savefig(path + filename_adversarial_diff,bbox_inches='tight')
 	# save image to be displayed on the screen
 	im_diff = round(diff(path + filename_original, path +  filename_adversarial_diff) * 100,2)
-	plt.title('{} Adversarial Image'.format('FGSM'), fontsize = 20)
+	plt.title('{} Attack'.format('FGSM'), fontsize = 20)
 	plt.xlabel('Noise level: {}% \n {}: {}'.format(im_diff,'CNN Prediction',predict_adv),fontsize=15)
 	# plot it
 	fig = plt.gcf()
@@ -96,6 +97,11 @@ def store_images_fgsm(num):
 	filename_adversarial = 'advimgnum' + str(img_num) + '_noise' + str(im_diff) + '_pred' + str(predict_adv) + '.png'
 	fig.savefig(path + filename_adversarial,bbox_inches='tight')
 	os.remove(path + filename_adversarial_diff)
+	if im_diff == 0.0:
+		os.remove(path + filename_adversarial)
+		os.remove(path + filename_original)
+	else:
+		pass
 
 # JSMA
 def store_images_jsma(num):
@@ -133,7 +139,7 @@ def store_images_jsma(num):
 	fig.savefig(path + filename_adversarial_diff,bbox_inches='tight')
 	# save image to be displayed on the screen
 	im_diff = round(diff(path + filename_original, path +  filename_adversarial_diff) * 100,2)
-	plt.title('{} Adversarial Image'.format('JSMA'), fontsize = 20)
+	plt.title('{} Attack'.format('JSMA'), fontsize = 20)
 	plt.xlabel('Noise level: {}% \n {}: {}'.format(im_diff,'CNN Prediction',predict_adv),fontsize=15)
 	# plot it
 	fig = plt.gcf()
@@ -143,6 +149,11 @@ def store_images_jsma(num):
 	filename_adversarial = 'advimgnum' + str(img_num) + '_noise' + str(im_diff) + '_pred' + str(predict_adv) + '.png'
 	fig.savefig(path + filename_adversarial,bbox_inches='tight')
 	os.remove(path + filename_adversarial_diff)
+	if im_diff == 0.0:
+		os.remove(path + filename_adversarial)
+		os.remove(path + filename_original)
+	else:
+		pass
 
 # DeepFool
 def store_images_deepfool(num):
@@ -166,7 +177,7 @@ def store_images_deepfool(num):
 	fig.savefig(path + filename_original,bbox_inches='tight')
 	# get it's adversarial example
 	classifier = KerasClassifier(clip_values=(0, 255), model=model)
-	epsilon = 0.2
+	epsilon = 0.4
 	adv_crafter = DeepFool(classifier)
 	x_art = np.reshape(img,[1,28,28,1])
 	img_adv = adv_crafter.generate(x=x_art, eps=epsilon)
@@ -180,7 +191,7 @@ def store_images_deepfool(num):
 	fig.savefig(path + filename_adversarial_diff,bbox_inches='tight')
 	# save image to be displayed on the screen
 	im_diff = round(diff(path + filename_original, path +  filename_adversarial_diff) * 100,2)
-	plt.title('{} Adversarial Image'.format('DeepFool'), fontsize = 20)
+	plt.title('{} Attack'.format('DeepFool'), fontsize = 20)
 	plt.xlabel('Noise level: {}% \n {}: {}'.format(im_diff,'CNN Prediction',predict_adv),fontsize=15)
 	# plot it
 	fig = plt.gcf()
@@ -190,14 +201,20 @@ def store_images_deepfool(num):
 	filename_adversarial = 'advimgnum' + str(img_num) + '_noise' + str(im_diff) + '_pred' + str(predict_adv) + '.png'
 	fig.savefig(path + filename_adversarial,bbox_inches='tight')
 	os.remove(path + filename_adversarial_diff)
-
-count = 0
-for i in range(0,y_test.shape[0]-1):
-	try:
-		store_images_fgsm(i)
-		store_images_jsma(i)
-		store_images_deepfool(i)
-	except:
+	if im_diff == 0.0:
+		os.remove(path + filename_adversarial)
+		os.remove(path + filename_original)
+	else:
 		pass
-	count +=1
-	print('iteration:', count)
+
+num_store_image = 200
+for i in range(150,num_store_image):
+	store_images_fgsm(i)
+	print('FGSM iteration:', i)
+for i in range(150,num_store_image):
+	store_images_jsma(i)
+	print('JSMA iteration:', i)
+for i in range(150,num_store_image):
+	store_images_deepfool(i)
+	print('DeepFool iteration:', i)
+	

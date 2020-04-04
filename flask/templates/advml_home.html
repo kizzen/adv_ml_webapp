@@ -28,13 +28,11 @@ $(function() {
         });        
     });
 });  
-
 </script>
 <style type="text/css">
     .bs-example{
     	margin: 20px;
     }
-
 .buttonload {
   background-color: #4CAF50; /* Green background */
   border: none; /* Remove borders */
@@ -42,23 +40,17 @@ $(function() {
   padding: 12px 24px; /* Some padding */
   font-size: 16px; /* Set a font-size */
 }
-
 /* Add a right margin to each icon */
 .fa {
   margin-left: -8px;
   margin-right: 8px;
 }
-
 </style>
 </head>
-
   <body>
-
   <center>   <br>
   <h2 font size="12">A Visual Exploration of Adversarial Attacks</font></h2><br><br>
-
-      <form  action="/advml" method="POST" >
-
+      <form  action="/advml_pics" method="POST" >
       <label for="dataset">&nbsp; &nbsp; &nbsp; Dataset:</label>
      <select name="dataset" style="width: 85px">
        <option value="null"> </option>
@@ -66,7 +58,7 @@ $(function() {
        <option value="CIFAR">CIFAR</option>
      </select>
 
-     <label for="attack">&nbsp; &nbsp; &nbsp; Select Attack:</label>
+     <label for="attack">&nbsp; &nbsp; &nbsp; Attack:</label>
      <select name="attack" style="width: 85px">
        <option value="null"> </option>
        <option value="fgsm">FGSM</option>
@@ -77,17 +69,12 @@ $(function() {
      <br><br>
           <button type="submit" class="btn btn-danger" id="load" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Attacking...">Attack!</button>
           </div>
-
    </div>
    </form>
-
    <div>
    <center>
-<!--       <img src="./static/original.png" width="500" height="333"/>
-      <img src="./static/adversarial.png" width="500" height="333"/> -->
    </center>
    </center>
-
  </div>
 
                                        </div>
