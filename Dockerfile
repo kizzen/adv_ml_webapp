@@ -17,6 +17,6 @@ COPY /flask/static/MNIST/JSMA /flask/static/MNIST/JSMA
 ADD requirements.txt /
 RUN pip  --no-cache-dir install -r /requirements.txt
 # Make port 5000 available to the world outside this container
-EXPOSE 5000
+EXPOSE 80
 # Run app.py when the container launches
 CMD ["python", "flask/advml_app.py"]
