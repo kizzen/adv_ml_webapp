@@ -50,7 +50,7 @@ datashape==0.5.4
 decorator==4.3.0
 diffimg==0.1.10
 distributed==1.21.8
-Django==2.1.2
+Django==2.2.13
 docutils==0.14
 entrypoints==0.2.3
 et-xmlfile==1.0.1
