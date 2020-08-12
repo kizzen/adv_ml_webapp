@@ -6,6 +6,7 @@ I have developed a Flask web-app which visually explores adversarial attacks: ht
 
 To use this tool, select the Dataset (MNIST or CIFAR), the attack (FGSM, JSMA or DeepFool) or let the computer make a random selection, then click "Attack!"
 
+To run locally, the Docker container ID is 23a8726b867f and the Docker image is advlapp. 
 ![alt text](https://raw.githubusercontent.com/kizzen/adv_ml_webapp/master/advml_capture.png)
 
 Other projects on my data science portfolio: https://kizzen.github.io/  
