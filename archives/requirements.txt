@@ -49,7 +49,7 @@ dask==0.17.5
 datashape==0.5.4
 decorator==4.3.0
 diffimg==0.1.10
-distributed==1.21.8
+distributed==2021.10.0
 Django==2.1.2
 docutils==0.14
 entrypoints==0.2.3
