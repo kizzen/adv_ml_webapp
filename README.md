@@ -6,8 +6,21 @@ I have developed a Flask web-app which visually explores adversarial attacks: ht
 
 To use this tool, select the Dataset (MNIST or CIFAR), the attack (FGSM, JSMA or DeepFool) or let the computer make a random selection, then click "Attack!"
 
-To run locally, the Docker container ID is 23a8726b867f and the Docker image is advlapp. 
 ![alt text](https://raw.githubusercontent.com/kizzen/adv_ml_webapp/master/advml_capture.png)
 
 Other projects on my data science portfolio: https://kizzen.github.io/  
 
+### How to Run the App
+
+1. Clone the repository
+- `git clone https://github.com/kizzen/adv_ml_webapp.git`
+2. In the directory you just cloned, create and activate a new virtual environment
+- `cd adv_ml_webapp`
+- `conda create -n adv_ml_webapp_env`
+- `conda activate adv_ml_webapp_env`
+3. Install the necessary packages from requirements.txt into the newly create environment
+- `pip install -r requirements.txt`
+4. In the `flask/` folder, launch the app from the terminal
+- `cd flask`
+- `python python advml_app.py`
+5. Click the given URL to access the app.: http://127.0.0.1:80.

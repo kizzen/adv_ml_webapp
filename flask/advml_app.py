@@ -7,6 +7,9 @@ import keras
 from keras.models import load_model
 from keras.models import model_from_json
 from keras import backend as K
+# print(keras.__version__)
+# print(tf.__version__)
+
 
 app = Flask(__name__)
 
